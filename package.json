@@ -1,0 +1,28 @@
+{
+    "name": "projeto17-shortly",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node ./src/server.js",
+        "dev": "npx nodemon ./src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@joi/date": "^2.1.0",
+        "bcrypt": "^5.1.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.17.1",
+        "joi": "^17.7.0",
+        "pg": "^8.5.1",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}
