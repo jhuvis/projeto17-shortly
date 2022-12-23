@@ -28,6 +28,28 @@ export async function shorten(req, res) {
     }  
 };
 
+export async function idUrl(req, res) {
+    try {
+        
+        const id = req.params.id;
+
+        const url = await connectionDB.query(
+            `SELECT u."userId" AS id, u."shortUrl", u.url FROM "public.urls" u WHERE id = $1`,
+            [id]
+        );
+          
+        if(!url.rows[0])
+        {
+            return res.status(404).send('url nao existe'); 
+        }  
+
+        return res.status(200).send(url.rows[0]);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send('Não foi possível conectar ao servidor!');
+    }  
+};
+
 export async function openShort(req, res) {
     try {
         
